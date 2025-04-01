@@ -1,0 +1,478 @@
+/* Globální stylování */
+@font-face {
+  font-family: "Sansation";
+  src: url("fonts/Sansation_Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("fonts/Sansation_Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("fonts/Sansation_Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("fonts/Sansation_Bold_Italic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("fonts/Sansation_Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("fonts/Sansation_Light_Italic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Responsivní design */
+@media only screen and (max-width: 600px) {
+  .navbar ul {
+    flex-direction: row; /* Keep items in a row */
+    justify-content: flex-start; /* Align items to the left */
+    /*align-items: flex-start; /* Align items to the left */
+  }
+
+  .navbar li {
+    margin: 10px 0;
+  }
+
+  .navbar a {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 8px 10px; /* Adjust padding for smaller screens */
+  }
+
+  .hero img {
+    max-width: 100px; /* Smaller images for mobile devices */
+  }
+
+  .intro-text {
+    font-size: 16px;
+  }
+
+  .work-item h3 {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  .hero img {
+    max-width: 140px;
+  }
+
+  .intro-text {
+    font-size: 22px;
+  }
+
+  .work-item h3 {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar ul {
+    flex-direction: row;
+    justify-content: flex-start; /* Align items to the left */
+  }
+
+  .work-item h3 {
+    font-size: 26px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .hero img {
+    max-width: 160px;
+  }
+
+  .intro-text {
+    font-size: 26px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .navbar ul {
+    justify-content: flex-start; /* Align items to the left */
+  }
+
+  .hero img {
+    max-width: 180px; /* Larger image for prominence */
+  }
+
+  .intro-text {
+    font-size: 30px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", sans-serif; /* Retro styl fontu */
+  background-color: #faf3e0; /* Krémová barva pro pozadí */
+  color: #2c1608; /* Hnědá pro text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden; /* Zachováno z původního kódu */
+}
+
+/* Navigační lišta */
+/* Navigační lišta */
+.navbar {
+  background: linear-gradient(
+    to right,
+    #af4a0a,
+    #ffd700
+  ); /* Gradientní retro styl */
+  max-width: 1440px;
+  width: 100%;
+  height: 44px;
+  margin: 0 auto;
+  border-bottom: 3px solid #f5deb3; /* Jemný odstín pšenice */
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Seznam navigace */
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-direction: row; /* Keep items in a row */
+  justify-content: flex-start; /* Align items to the left */
+  overflow: hidden; /* Allow horizontal scrolling if needed */
+}
+
+.navbar li {
+  margin: 0 0px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #f5f5dc; /* Béžová barva pro text */
+  font-weight: 600;
+  font-size: 20px;
+  padding: 10px 15px;
+  border-radius: 5px; /* Zaoblené rohy */
+  transition: all 0.3s ease; /* Zachováno z původního kódu */
+}
+
+.navbar a:hover {
+  background-color: #ff8c42; /* Oranžová na hover */
+  color: #2c1608; /* Tmavá hnědá na hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Jemný stín */
+}
+
+/* Aktivní tlačítko */
+.navbar a.active {
+  background-color: #faf3e0; /* Light gray for active state */
+  color: #34495e; /* Deep blue-gray text for active state */
+  border-radius: 5px;
+  box-shadow: inset -5px 0 5px -5px rgba(0, 0, 0, 1),
+    inset 5px 0 5px -5px rgba(0, 0, 0, 1); /* Inner shadow left and right */
+}
+
+#kdojsem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertikální centrování */
+}
+
+/* Bento Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  grid-template-rows: 300px 300px;
+  gap: 60px;
+  z-index: 10;
+}
+
+.about-me {
+  grid-column: span 2;
+  height: 300px;
+}
+
+.skills {
+  grid-row: span 2;
+  height: 660px;
+}
+
+.tools {
+  grid-row: 2 / 3;
+  height: 300px;
+}
+
+.cont {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  height: 300px;
+}
+
+.bento-item {
+  display: flex;
+  align-items: flex-start; /* Zarovná obsah na začátek */
+  justify-content: center;
+  background: #ffe4c4; /* Béžové retro pozadí */
+  border: 2px solid #ff8c42; /* Oranžový obrys */
+  padding: 10px;
+  border-radius: 15px; /* Zaoblené rohy */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Jemný stín */
+  transition: all 0.3s ease-out;
+  font-size: 18px;
+  text-align: justify;
+  word-wrap: break-word;
+  align-items: stretch;
+}
+
+.bento-item img {
+  opacity: 0.5; /* Reduced opacity for images */
+  transition: opacity 0.5s ease-out; /* Smooth transition for images */
+  max-width: 200px; /* Nastaví maximální šířku obrázku */
+  margin-right: 20px; /* Přidá mezery mezi obrázkem a textem */
+  border-radius: 10px; /* Přidá zaoblené rohy k obrázku */
+  object-fit: cover;
+}
+
+.bento-item.visible {
+  display: flex;
+  align-items: flex-start; /* Zarovná obsah na začátek */
+  align-items: stretch;
+  justify-content: center;
+  background: #ff8c42; /* Výrazná oranžová pro aktivní stav */
+  color: #020201;
+  font-size: 18px;
+  font-weight: bold; /* Béžový text */
+  opacity: 1; /* Viditelné */
+  transform: scale(1) rotateX(0deg) translateZ(20px); /* Posun do prostoru */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); /* Hluboký stín pro 3D efekt */
+  transition: all 0.5s ease-out, transform 0.8s ease-out,
+    box-shadow 0.8s ease-out; /* Hladký přechod stínů */
+  z-index: 10;
+  overflow: hidden; /* Skryje přetékající obsah */
+  word-wrap: break-word; /* Zalamuje text na více řádků */
+  text-align: justify; /* Zarovnání textu do bloku */
+}
+
+.bento-item.visible img {
+  opacity: 1;
+  filter: blur(0px);
+  z-index: 20;
+  max-width: 200px; /* Nastaví maximální šířku obrázku */
+  margin-right: 20px; /* Přidá mezery mezi obrázkem a textem */
+  border-radius: 10px; /* Přidá zaoblené rohy k obrázku */
+  object-fit: cover;
+  height: 100%; /* Nastaví výšku obrázku na 100% výšky boxu */
+}
+
+.bento-item h1 {
+  text-align: center; /* Zarovnání na střed */
+  font-size: 20px; /* Velikost písma 20px */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Lehký stín */
+}
+.bento-item.visible h1 {
+  text-align: center; /* Zarovnání na střed */
+  font-size: 20px; /* Velikost písma 20px */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Lehký stín */
+}
+
+/*.bento-item.visible:hover {
+  background: linear-gradient(
+    to right,
+    #ffd700,
+    #ff8c42
+  ); /* Změna gradientu na hover */
+/*box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8); /* Zvětšení stínu při hover */
+/* transform: scale(1.05) translateZ(25px); /* Lehký posun a zvětšení na hover */
+/* transition: transform 0.5s ease-out, box-shadow 0.5s ease-out,
+    background 0.5s ease-out;
+}*/
+
+/*.logo-placeholder {
+  display: inline-block;
+  perspective: 1000px; /* Nastaví perspektivu pro 3D efekt */
+/*}*/
+
+.logo-placeholder img {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+/*.logo-placeholder img:hover {
+  transform: rotateY(0deg) rotateX(0deg) translateZ(20px); /* Posun směrem ven při hover */
+/*box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7); /* Zvýraznění stínu při hover */
+/*}
+*/
+/* Parallax Layers */
+.parallax-layer.layer1 {
+  position: fixed; /* Fixní pozice pro parallax efekt */
+  width: 100%;
+  height: 150vh;
+  top: 0;
+  background-color: #d19672a6; /* Oranžové pozadí */
+  clip-path: polygon(
+    0 15%,
+    100% 0,
+    100% 100%,
+    0 100%,
+    0 0
+  ); /* Zešikmení horní hrany */
+  transform: translateY(80vh); /* Start pod viewportem */
+  z-index: -1; /* Vrstva pod obsahem stránky */
+  filter: blur(5px);
+}
+
+.hero {
+  min-height: 100vh; /* Zachována původní výška */
+  display: flex; /* Flexbox pro centrování */
+  flex-direction: column; /* Svislé uspořádání */
+  justify-content: center; /* Vertikální centrování */
+  align-items: center; /* Horizontální centrování */
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+
+  z-index: 1; /* Jemná světle žlutá retro barva */
+}
+
+/* Sekce obsahu */
+.hero,
+.about,
+.work,
+.contact {
+  min-height: 100vh; /* Full height for each section */
+  text-align: center;
+  padding: 40px;
+  max-width: 1440px;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 2px solid #bdc3c7; /* Subtle border for sections */
+  /* Content above parallax layers */
+  position: relative;
+}
+
+.hero img {
+  max-width: 180px; /* Zachována velikost */
+  margin-bottom: 20px;
+  border-radius: 50%; /* Kulatý styl obrázku */
+  border: 3px solid #ff8c42; /* Oranžový retro rámeček */
+}
+
+.intro-text {
+  font-size: 22px;
+  line-height: 1.8;
+  font-weight: 300; /* Zachována elegance textu */
+  color: #2c1608; /* Hnědý retro text */
+}
+
+.about-text {
+  font-size: 24px;
+  line-height: 1.6;
+  font-weight: 500; /* Light font for elegance */
+  color: #2c3e50;
+}
+
+.work-item {
+  margin-bottom: 30px;
+}
+
+.work-item h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #34495e; /* Deep blue-gray for headings */
+  font-weight: 600;
+}
+/* Pevné vrstvy po krajích */
+.fixed-gradient-left,
+.fixed-gradient-right {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100px; /* Šířka pevné vrstvy */
+  z-index: 4; /* Nad ostatními vrstvami */
+  pointer-events: none; /* Zabrání interakci s vrstvami */
+}
+
+.skills-text {
+  height: 100%; /* Zajistí, že obsah bude mít plnou výšku rodičovského prvku */
+  text-align: justify; /* Zarovná text na střed */
+  font-size: 28px;
+}
+
+.skills-text p span {
+  display: block; /* Každá položka bude na svém vlastním řádku */
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Dva sloupce */
+  grid-template-rows: repeat(2, 1fr); /* Dva řádky */
+  gap: 10px; /* Mezera mezi ikonami */
+  justify-items: center; /* Zarovná ikony na střed horizontálně */
+  align-items: center; /* Zarovná ikony na střed vertikálně */
+  height: 80%; /* Zajistí, že mřížka bude mít plnou výšku rodičovského prvku */
+}
+
+.icon-grid a {
+  display: block;
+}
+
+.icon-grid img {
+  width: 90px; /* Nastaví šířku ikon */
+  height: 90px; /* Nastaví výšku ikon */
+  border-radius: 10px; /* Přidá zaoblené rohy k ikonám */
+  transition: transform 0.3s ease; /* Hladký přechod při hover efektu */
+}
+
+.icon-grid a:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Lehký stín při hover efektu */
+}
+
+.fixed-gradient-left {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #faf3e0,
+    transparent
+  ); /* Gradient zleva doprava */
+}
+
+.fixed-gradient-right {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    #faf3e0,
+    transparent
+  ); /* Gradient zprava doleva */
+}
+
+/* Obsah stránky */
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1; /* Nad gradientovými vrstvami */
+}

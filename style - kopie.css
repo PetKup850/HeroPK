@@ -1,0 +1,335 @@
+/* Globální stylování */
+@font-face {
+  font-family: "Sansation";
+  src: url("fonts/Sansation_Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("fonts/Sansation_Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("fonts/Sansation_Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("fonts/Sansation_Bold_Italic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("fonts/Sansation_Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Sansation";
+  src: url("fonts/Sansation_Light_Italic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Responsivní design */
+@media only screen and (max-width: 600px) {
+  .navbar ul {
+    flex-direction: row; /* Keep items in a row */
+    justify-content: flex-start; /* Align items to the left */
+    /*align-items: flex-start; /* Align items to the left */
+  }
+
+  .navbar li {
+    margin: 10px 0;
+  }
+
+  .navbar a {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 8px 10px; /* Adjust padding for smaller screens */
+  }
+
+  .hero img {
+    max-width: 100px; /* Smaller images for mobile devices */
+  }
+
+  .intro-text {
+    font-size: 16px;
+  }
+
+  .work-item h3 {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  .hero img {
+    max-width: 140px;
+  }
+
+  .intro-text {
+    font-size: 18px;
+  }
+
+  .work-item h3 {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar ul {
+    flex-direction: row;
+    justify-content: flex-start; /* Align items to the left */
+  }
+
+  .work-item h3 {
+    font-size: 26px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .hero img {
+    max-width: 160px;
+  }
+
+  .intro-text {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .navbar ul {
+    justify-content: flex-start; /* Align items to the left */
+  }
+
+  .hero img {
+    max-width: 180px; /* Larger image for prominence */
+  }
+
+  .intro-text {
+    font-size: 22px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Sansation", sans-serif;
+  background-color: #ffffff; /* Clean white background */
+  color: #2c3e50; /* Sophisticated dark gray-blue for text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden; /* Hide scrollbars */
+}
+
+/* Navigační lišta */
+/* Navigační lišta */
+.navbar {
+  background-color: #34495e; /* Deep modern blue-gray */
+  max-width: 1440px;
+  width: 100%;
+  height: 40px; /* Doubled height for navigation bar */
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-bottom: 3px solid #ecf0f1; /* Subtle bottom border */
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0;
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+/* Seznam navigace */
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-direction: row; /* Keep items in a row */
+  justify-content: flex-start; /* Align items to the left */
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+.navbar li {
+  margin: 0 0px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ecf0f1; /* Light modern gray for links */
+  font-weight: 600; /* Slightly bold for emphasis */
+  font-size: 14px;
+  padding: 10px 15px;
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+.navbar a:hover {
+  background-color: #ecf0f1; /* Light gray on hover */
+  color: #34495e; /* Deep blue-gray text on hover */
+  border-radius: 5px;
+  box-shadow: inset -5px 0 5px -5px rgba(0, 0, 0, 1),
+    inset 5px 0 5px -5px rgba(0, 0, 0, 1); /* Inner shadow left and right */
+}
+
+/* Aktivní tlačítko */
+.navbar a.active {
+  background-color: #ecf0f1; /* Light gray for active state */
+  color: #34495e; /* Deep blue-gray text for active state */
+  border-radius: 5px;
+  box-shadow: inset -5px 0 5px -5px rgba(0, 0, 0, 1),
+    inset 5px 0 5px -5px rgba(0, 0, 0, 1); /* Inner shadow left and right */
+}
+
+#kdojsem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertikální centrování */
+}
+
+/* Bento Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  height: 70vh; /* Nastaví výšku mřížky na 70 % výšky viditelné části stránky */
+  grid-template-rows: 30vh 30vh;
+  gap: 60px;
+}
+
+.about-me {
+  grid-column: span 2;
+}
+
+.skills {
+  grid-row: span 2;
+}
+
+.tools {
+  grid-row: 2 / 3;
+}
+
+.bento-item {
+  background: #ffffff; /* Same background color as the page */
+  border: 2px solid #b8cbcc; /* Gray border matching text color */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: none; /* No shadow initially */
+  color: #7f8c8d; /* Darker gray text */
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* No initial transform */
+  transition: all 0.5s ease-out; /* Smooth transition */
+}
+
+.bento-item img {
+  opacity: 0.5; /* Reduced opacity for images */
+  transition: opacity 0.5s ease-out; /* Smooth transition for images */
+}
+
+.bento-item.hidden {
+  background: #fafcfd; /* Light gray background before visibility */
+  color: #aec1c2; /* Darker gray text */
+}
+
+.bento-item.visible {
+  background: #34495e; /* Same background color as navbar */
+  color: #ecf0f1; /* Light gray text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Visible shadow */
+  border: none; /* Remove border when visible */
+}
+
+.bento-item.visible img {
+  opacity: 1; /* Full opacity for images */
+}
+
+/* Parallax Layers */
+.parallax-layer {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  transform: translateY(100vh); /* Start from below the viewport */
+}
+
+.layer1 {
+  background-image: url("layer1-modern.jpg"); /* Replace with modern image */
+  z-index: 2;
+}
+
+.layer2 {
+  background-image: url("layer2-modern.jpg"); /* Replace with modern image */
+  z-index: 1;
+}
+
+.hero {
+  min-height: 100vh; /* Full height for hero section */
+  display: flex; /* Enables Flexbox */
+  flex-direction: column; /* Ensures content is stacked vertically */
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  padding: 20px; /* Adds some spacing around the content */
+  text-align: center; /* Centers text for a balanced look */
+  box-sizing: border-box; /* Includes padding in height/width calculations */
+}
+
+/* Sekce obsahu */
+.hero,
+.about,
+.work,
+.contact {
+  min-height: 100vh; /* Full height for each section */
+  text-align: center;
+  padding: 40px;
+  max-width: 1440px;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 2px solid #bdc3c7; /* Subtle border for sections */
+  z-index: 3; /* Content above parallax layers */
+  position: relative;
+}
+
+.hero img {
+  max-width: 180px; /* Slightly larger for prominence */
+  margin-bottom: 20px;
+  border-radius: 50%; /* Circular image for a modern feel */
+  border: 3px solid #34495e; /* Deep modern border */
+}
+
+.intro-text {
+  font-size: 20px;
+  line-height: 1.8;
+  font-weight: 300; /* Light font for elegance */
+  color: #2c3e50;
+}
+
+.about-text {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 300; /* Light font for elegance */
+  color: #2c3e50;
+}
+
+.work-item {
+  margin-bottom: 30px;
+}
+
+.work-item h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #34495e; /* Deep blue-gray for headings */
+  font-weight: 600;
+}
